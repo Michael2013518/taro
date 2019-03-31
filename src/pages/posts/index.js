@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
 
 export default class PostIndex extends Component {
     state = {
@@ -23,9 +24,10 @@ export default class PostIndex extends Component {
       console.log(response.data)
     }
     render() {
+      const { posts } = this.state
       return (
           <View className="container">
-              { this.state.posts.map((post) =>
+              { posts.map((post) =>
                  <View className="card" key={post.id} onClick={this.handleClick.bind(this, post.id)}>
                   <img mode="aspectFill" className="card-img-top" src={ post.imageUrl}></img>
                   <View className="card-body">

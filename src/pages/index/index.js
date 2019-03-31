@@ -2,6 +2,8 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
 
+import { AtButton } from 'taro-ui'
+
 export default class Index extends Component {
 
   config = {
@@ -22,6 +24,8 @@ export default class Index extends Component {
     return (
       <View className="index">
         <Text>hello ~</Text>
+        <AtButton type='primary' className="my-3">按钮</AtButton>
+        <AtButton type='secondary' className="my-3">按钮</AtButton>
       </View>
     )
   }
