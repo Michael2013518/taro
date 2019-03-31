@@ -2,7 +2,9 @@ import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 import '@tarojs/async-await'
 
+import './assets/style/app.scss'
 import './app.scss'
+
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -14,9 +16,9 @@ class App extends Component {
 
   config = {
     pages: [
+      'pages/index/index',
       'pages/posts/index',
-      'pages/posts/show',
-      'pages/index/index'
+      'pages/posts/show'
     ],
     window: {
       backgroundTextStyle: 'light',
