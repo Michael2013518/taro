@@ -1,9 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import SearchBar  from '../../components/search-bar'
+import { AtTabBar } from 'taro-ui'
 
 export default class PostIndex extends Component {
     state = {
+     current: 0,
      posts: []
     }
     config = {
@@ -23,10 +25,33 @@ export default class PostIndex extends Component {
       })
       console.log(response.data)
     }
+    handleClick(value) {
+      this.setState({
+        current: value
+      })
+      switch (value) {
+        case 0:
+        Taro.redirectTo({
+          url:`/pages/index/index`
+        })
+        break;
+        case 1:
+        Taro.redirectTo({
+          url:`/pages/shop/index`
+        })
+        break;
+        case 2:
+        Taro.redirectTo({
+          url:`/pages/user/profile`
+        })
+        break;
+      }
+    }
     render() {
       const { posts } = this.state
       return (
           <View className="container">
+            <SearchBar/>
               { posts.map((post) =>
                  <View className="card" key={post.id} onClick={this.handleClick.bind(this, post.id)}>
                   <img mode="aspectFill" className="card-img-top" src={ post.imageUrl}></img>
@@ -37,6 +62,16 @@ export default class PostIndex extends Component {
                  </View>
                 )
               }
+              <View className="container">
+                <AtTabBar fixed tabList={[
+                  { title: '首页', iconType: 'home'},
+                  { title: '商店', iconType: 'message'},
+                  { title: '我的', iconType: 'user'}
+                 ]}
+                 onClick={this.handleClick.bind(this)}
+                 current={this.state.current}
+                />
+              </View>
           </View>
       )
     }

@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 import '@tarojs/async-await'
+import { AtTabBar } from 'taro-ui'
 
 import './assets/style/app.scss'
 import './app.scss'
@@ -17,6 +18,9 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
+      'pages/shop/index',
+      'pages/shop/cart',
+      'pages/user/profile',
       'pages/posts/index',
       'pages/posts/show'
     ],
@@ -25,6 +29,25 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      color: '#666',
+      selectedColor: '#000',
+      backgroundColor: '#fff',
+      list: [
+        {
+          pagePath: 'pages/shop/index',
+          text: '商店'
+        },
+        {
+          pagePath: 'pages/shop/cart',
+          text: '购物袋'
+        },
+        {
+          pagePath: 'pages/user/profile',
+          text: '我的'
+        }
+      ]
     }
   }
 
