@@ -105,5 +105,22 @@
         "description": "Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.",
         "imageUrl": "https://resources.ninghao.net/images/white-dragon.jpg"
       }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "name": "坦桑尼亚咖啡豆",
+        "price": "178"
+      },
+      {
+        "id": 2,
+        "name": "哥斯达黎加咖啡豆",
+        "price": "178"
+      },
+      {
+        "id": 3,
+        "name": "坦桑尼秘鲁琼卡里咖啡豆亚咖啡豆",
+        "price": "178"
+      }
     ]
   }
